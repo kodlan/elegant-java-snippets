@@ -6,7 +6,7 @@ Java code snippets
 <details>
 <summary>Arrays</summary>
 
-* [Array initialization](#Array initialization)
+* [`Array initialization`](#Array-initialization)
 
 </details>
 
@@ -38,7 +38,7 @@ Java code snippets
 int[] array = { 1, 2, 3, 4, 5 };
 ```
 
-<br>[⬆ back to contents](#Table of contents)
+<br>[⬆ back to contents](#Table-of-contents)
 
 ## Lists
 
@@ -50,11 +50,11 @@ List<Integer> list = Arrays.asList(1, 2, 3);
 list = List.of(1, 2, 3);
 ```
 
-<br>[⬆ back to contents](#Table of contents)
+<br>[⬆ back to contents](#Table-of-contents)
 
 ## Sets
 
-<br>[⬆ back to contents](#Table of contents)
+<br>[⬆ back to contents](#Table-of-contents)
 
 ## Maps
 
@@ -69,8 +69,8 @@ map = Map.of("key1","value1", "key2", "value2")
     
 // ... upto 10 key-value pairs
 ```
-<br>[⬆ back to contents](#Table of contents)
+<br>[⬆ back to contents](#Table-of-contents)
 
 ## Min Heap, Max Heap, PriorityQueue
 
-<br>[⬆ back to contents](#Table of contents)
+<br>[⬆ back to contents](#Table-of-contents)
