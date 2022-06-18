@@ -13,7 +13,7 @@ Java code snippets
 <details>
 <summary>Lists</summary>
 
-* [Unmodifiable list initialization](#Unmodifiable list initialization)
+* [Unmodifiable list initialization](#Unmodifiable-list-initialization)
 
 </details>
 
@@ -26,7 +26,7 @@ Java code snippets
 <details>
 <summary>Maps</summary>
 
-* [Unmodifiable map initialization](#Unmodifiable map initialization)
+* [Unmodifiable map initialization](#Unmodifiable-map-initialization)
 
 </details>
 
