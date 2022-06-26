@@ -16,7 +16,8 @@ Java code snippets
 <details>
 <summary>Lists</summary>
 
-* [Unmodifiable list initialization](#Unmodifiable-list-initialization)
+* [`List initialization`](#List-initialization)
+* [`Unmodifiable list initialization`](#Unmodifiable-list-initialization)
 
 </details>
 
@@ -64,6 +65,26 @@ System.out.println(Arrays.deepToString(array)); // int[][] for example
 <br>[⬆ back to contents](#Table-of-contents)
 
 ## Lists
+
+### List initialization
+Using `Arrays.asList()`:
+```java
+String[] array = new String[] {"one", "two", "three"};
+List<String> list = new ArrayList<>(Arrays.asList(array));  // not for int[] due to cannot infer type arguments for java.util.ArrayList<>
+
+// for int[]:
+List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
+```
+
+Using `add()`:
+```java
+List<Integer> list = new LinkedList<>() {{
+  add(1);
+  add(3);
+}};
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
 
 ### Unmodifiable list initialization
 
