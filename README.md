@@ -7,6 +7,9 @@ Java code snippets
 <summary>Arrays</summary>
 
 * [`Array initialization`](#Array-initialization)
+* [`Fill the array`](#Fill-the-array)
+* [`Output the array`](#Output-the-array)
+  
 
 </details>
 
@@ -36,6 +39,26 @@ Java code snippets
 
 ```java
 int[] array = { 1, 2, 3, 4, 5 };
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Fill the array
+
+```java
+int[] array = new int[10];
+
+Arrays.fill(array, 1);     // [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+Arrays.fill(ar, 1, 5, 2);  // [1, 2, 2, 2, 2, 1, 1, 1, 1, 1]
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Output the array
+
+```java
+System.out.println(Arrays.toString(array));     // int[] for example
+System.out.println(Arrays.deepToString(array)); // int[][] for example
 ```
 
 <br>[⬆ back to contents](#Table-of-contents)
