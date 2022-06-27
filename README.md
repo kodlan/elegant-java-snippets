@@ -9,7 +9,6 @@ Java code snippets
 * [`Array initialization`](#Array-initialization)
 * [`Fill the array`](#Fill-the-array)
 * [`Output the array`](#Output-the-array)
-  
 
 </details>
 
@@ -18,6 +17,7 @@ Java code snippets
 
 * [`List initialization`](#List-initialization)
 * [`Unmodifiable list initialization`](#Unmodifiable-list-initialization)
+* [`List output`](#List-output)
 
 </details>
 
@@ -67,14 +67,6 @@ System.out.println(Arrays.deepToString(array)); // int[][] for example
 ## Lists
 
 ### List initialization
-Using `Arrays.asList()`:
-```java
-String[] array = new String[] {"one", "two", "three"};
-List<String> list = new ArrayList<>(Arrays.asList(array));  // not for int[] due to cannot infer type arguments for java.util.ArrayList<>
-
-// for int[]:
-List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
-```
 
 Using `add()`:
 ```java
@@ -84,6 +76,16 @@ List<Integer> list = new LinkedList<>() {{
 }};
 ```
 
+Using `Arrays.asList()`:
+```java
+String[] array = new String[] {"one", "two", "three"};
+List<String> list = new ArrayList<>(Arrays.asList(array));  // not for int[] due to cannot infer type arguments for java.util.ArrayList<>
+
+// for int[]:
+List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
+```
+
+
 <br>[⬆ back to contents](#Table-of-contents)
 
 ### Unmodifiable list initialization
@@ -91,7 +93,21 @@ List<Integer> list = new LinkedList<>() {{
 ```java
 List<Integer> list = Arrays.asList(1, 2, 3);
 
+list = Collections.unmodifiableList(Arrays.asList(1, 2, 3));
+
 list = List.of(1, 2, 3);
+
+list = Collections.singletonList(1);
+
+list = Collections.emptyList();
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### List output
+
+```java
+System.out.println(list);  // toString()
 ```
 
 <br>[⬆ back to contents](#Table-of-contents)
