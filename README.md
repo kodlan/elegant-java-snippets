@@ -24,6 +24,8 @@ Java code snippets
 <details>
 <summary>Sets</summary>
 
+* [`Set initialization`](#Set-initialization)
+* [`Unmodifiable set initialization`](#Unmodifiable set initialization)
 
 </details>
 
@@ -114,7 +116,37 @@ System.out.println(list);  // toString()
 
 ## Sets
 
+### Set initialization
+
+Using `add()`:
+```java
+Set<Integer> set = new HashSet<Integer>() {{
+    add(1);
+    add(2);
+    add(3);
+}};
+```
+Using other collections:
+```java
+Set<Integer> set = new HashSet<>(Arrays.asList(1, 2, 3));
+```
+Using `Collections.addAll`:
+```java
+Set<Integer> mutableSet;
+Collections.addAll(mutableSet = new HashSet<>(), 1, 2, 3);
+```
+
 <br>[⬆ back to contents](#Table-of-contents)
+
+### Unmodifiable set initialization
+
+```java
+Set<Integer> set = Set.of(1, 2, 3);
+    
+set = Collections.singleton(1);
+
+set = Collections.emptySet();
+```
 
 ## Maps
 
