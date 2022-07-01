@@ -32,7 +32,8 @@ Java code snippets
 <details>
 <summary>Maps</summary>
 
-* [Unmodifiable map initialization](#Unmodifiable-map-initialization)
+* [`Map initialization`](#Map initialization)
+* [`Unmodifiable map initialization`](#Unmodifiable-map-initialization)
 
 </details>
 
@@ -151,6 +152,17 @@ set = Collections.emptySet();
 
 ## Maps
 
+### Map initialization
+
+Using `add()`:
+```java
+Map<String, String> doubleBraceMap  = new HashMap<String, String>() {{
+    put("key1", "value1");
+    put("key2", "value2");
+}};
+```
+<br>[⬆ back to contents](#Table-of-contents)
+
 ### Unmodifiable map initialization
 
 ```java
@@ -161,6 +173,17 @@ map = Map.of("key", "value");
 map = Map.of("key1","value1", "key2", "value2")
     
 // ... upto 10 key-value pairs
+
+map = Map.ofEntries(
+    new AbstractMap.SimpleEntry<>("key1", "value1"),
+    new AbstractMap.SimpleEntry<>("key2", "value2"),
+    new AbstractMap.SimpleEntry<>("key3", "value3"),
+    new AbstractMap.SimpleEntry<>("key4", "value4")
+);
+    
+map = Collections.singletonMap("key", "value");
+
+map = Collections.emptyMap();
 ```
 <br>[⬆ back to contents](#Table-of-contents)
 
