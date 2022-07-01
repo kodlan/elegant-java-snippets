@@ -25,7 +25,7 @@ Java code snippets
 <summary>Sets</summary>
 
 * [`Set initialization`](#Set-initialization)
-* [`Unmodifiable set initialization`](#Unmodifiable set initialization)
+* [`Unmodifiable set initialization`](#Unmodifiable-set-initialization)
 
 </details>
 
