@@ -147,6 +147,7 @@ set = Collections.singleton(1);
 
 set = Collections.emptySet();
 ```
+<br>[⬆ back to contents](#Table-of-contents)
 
 ## Maps
 
