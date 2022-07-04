@@ -34,6 +34,8 @@ Java code snippets
 
 * [`Map initialization`](#Map initialization)
 * [`Unmodifiable map initialization`](#Unmodifiable-map-initialization)
+* [`Sort map by keys`](#Sort-map-by-keys)
+* [`Sort map by values`](#Sort-map-by-values)
 
 </details>
 
@@ -185,6 +187,36 @@ map = Collections.singletonMap("key", "value");
 
 map = Collections.emptyMap();
 ```
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Sort map by keys
+
+Using `TreeMap`: 
+
+```java
+Map<String, String> sortedMap = new TreeMap<>(map);
+```
+
+Using `comparingByKey`:
+```java
+List<Entry<String, String>> entries = new ArrayList<>(map.entrySet());
+entries.sort(Map.Entry.comparingByKey());
+// or reversed
+entries.sort(Map.Entry.<String, String>comparingByKey().reversed());
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Sort map by values
+
+Using `comparingByValue`:
+```java
+List<Entry<String, String>> entries = new ArrayList<>(map.entrySet());
+entries.sort(Map.Entry.comparingByValue());
+// or reversed
+entries.sort(Map.Entry.<String, String>comparingByValue().reversed());
+```
+
 <br>[⬆ back to contents](#Table-of-contents)
 
 ## Min Heap, Max Heap, PriorityQueue
