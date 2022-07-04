@@ -39,6 +39,14 @@ Java code snippets
 
 </details>
 
+<details>
+<summary>Min Heap, Max Heap, PriorityQueue</summary>
+
+* [`Min Heap initialization`](#Min-Heap-initialization)
+* [`Max Heap initialization`](#Max-Heap-initialization)
+
+</details>
+
 ## Arrays
 
 ### Array initialization
@@ -220,5 +228,29 @@ entries.sort(Map.Entry.<String, String>comparingByValue().reversed());
 <br>[⬆ back to contents](#Table-of-contents)
 
 ## Min Heap, Max Heap, PriorityQueue
+
+### Min Heap initialization
+
+```java
+PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+
+PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> a - b);
+
+PriorityQueue<Integer> minHeap = new PriorityQueue<>(Comparator.comparingInt(a -> a));
+
+PriorityQueue<Integer> minHeap = new PriorityQueue<>(Comparator.naturalOrder());
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Max Heap initialization
+
+```java
+PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
+
+PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+
+
+```
 
 <br>[⬆ back to contents](#Table-of-contents)
