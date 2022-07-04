@@ -32,7 +32,7 @@ Java code snippets
 <details>
 <summary>Maps</summary>
 
-* [`Map initialization`](#Map initialization)
+* [`Map initialization`](#Map-initialization)
 * [`Unmodifiable map initialization`](#Unmodifiable-map-initialization)
 * [`Sort map by keys`](#Sort-map-by-keys)
 * [`Sort map by values`](#Sort-map-by-values)
