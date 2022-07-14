@@ -19,6 +19,9 @@ Java code snippets
 * [`Unmodifiable list initialization`](#Unmodifiable-list-initialization)
 * [`List output`](#List-output)
 
+&nbsp;&nbsp;&nbsp;Common for collections:
+* [`Min, max element`](#min-max-elements)
+
 </details>
 
 <details>
@@ -26,6 +29,16 @@ Java code snippets
 
 * [`Set initialization`](#Set-initialization)
 * [`Unmodifiable set initialization`](#Unmodifiable-set-initialization)
+
+&nbsp;&nbsp;&nbsp;Common for collections:
+* [`Min, max element`](#min-max-elements)
+
+</details>
+
+<details>
+<summary>Collections</summary>
+
+* [`Min, max element`](#min-max-elements)
 
 </details>
 
@@ -159,6 +172,18 @@ set = Collections.singleton(1);
 set = Collections.emptySet();
 ```
 <br>[⬆ back to contents](#Table-of-contents)
+
+## Collections
+
+### Min, max elements
+
+```java
+Collections.min(set);
+Collections.max(set);
+```
+<br>[⬆ back to contents](#Table-of-contents)
+
+
 
 ## Maps
 
