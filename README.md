@@ -10,6 +10,9 @@ Java code snippets
 * [`Fill the array`](#Fill-the-array)
 * [`Output the array`](#Output-the-array)
 
+&nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
+* [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
+
 </details>
 
 <details>
@@ -20,6 +23,10 @@ Java code snippets
 
 &nbsp;&nbsp;&nbsp;Common for collections:
 * [`Min, max element`](#min-max-elements)
+
+&nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
+* [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
+
 
 </details>
 
@@ -33,12 +40,27 @@ Java code snippets
 &nbsp;&nbsp;&nbsp;Common for collections:
 * [`Min, max element`](#min-max-elements)
 
+&nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
+* [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
+
+
 </details>
 
 <details>
 <summary><b>Collections</b></summary>
 
 * [`Min, max element`](#min-max-elements)
+
+&nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
+* [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
+
+</details>
+
+<details>
+<summary><b>Streams</b></summary>
+
+* [`Stream initialization`](#stream-initialization)
+* [`Check if all elements are equal`](#check-if-all-elements-are-equal)
 
 </details>
 
@@ -178,8 +200,65 @@ System.out.println(list);  // toString()
 ### Min, max elements
 
 ```java
-Collections.min(set);
-Collections.max(set);
+Collections.min(collection);
+Collections.max(collection);
+```
+<br>[⬆ back to contents](#Table-of-contents)
+
+## Streams
+
+### Stream initialization
+
+From a `Collection`
+```java
+Stream<Integer> stream = set.stream();
+stream = list.stream();
+stream = queue.stream();
+```
+
+Using `Stream.of(T…t)`:
+```java
+Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
+```
+
+From `array`:
+```java
+Stream<T> streamOfArray = Arrays.stream(array);
+Stream<T> streamOfArray = Stream.of(array);
+```
+Empty stream:
+```java
+Stream<String> emptyStream = Stream.empty();
+```
+
+Using `Stream.builder()`:
+```java
+Stream.Builder<String> builder = Stream.builder();
+  
+Stream<String> stream = builder.add("a")
+    .add("b")
+    .add("c")
+    .build();
+```
+
+Using `Stream.iterate()`:
+```java
+// The iterate() method returns an infinite sequential ordered Stream
+// produced by iterative application of a function f to an initial element seed.
+Stream.iterate(seedValue, (Integer n) -> n * n)
+```
+
+Using `Stream.generate()`:
+```java
+Stream.generate(Math::random)
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Check if all elements are equal
+
+```java
+return intStream.distinct().count() == 1;
 ```
 <br>[⬆ back to contents](#Table-of-contents)
 
