@@ -4,7 +4,7 @@ Java code snippets
 ## Table of contents
 
 <details>
-<summary>Arrays</summary>
+<summary><b>Arrays</b></summary>
 
 * [`Array initialization`](#Array-initialization)
 * [`Fill the array`](#Fill-the-array)
@@ -13,7 +13,18 @@ Java code snippets
 </details>
 
 <details>
-<summary>Lists</summary>
+<summary><b>Sets</b></summary>
+
+* [`Set initialization`](#Set-initialization)
+* [`Unmodifiable set initialization`](#Unmodifiable-set-initialization)
+
+&nbsp;&nbsp;&nbsp;Common for collections:
+* [`Min, max element`](#min-max-elements)
+
+</details>
+
+<details>
+<summary><b>Lists</b></summary>
 
 * [`List initialization`](#List-initialization)
 * [`Unmodifiable list initialization`](#Unmodifiable-list-initialization)
@@ -25,25 +36,14 @@ Java code snippets
 </details>
 
 <details>
-<summary>Sets</summary>
-
-* [`Set initialization`](#Set-initialization)
-* [`Unmodifiable set initialization`](#Unmodifiable-set-initialization)
-
-&nbsp;&nbsp;&nbsp;Common for collections:
-* [`Min, max element`](#min-max-elements)
-
-</details>
-
-<details>
-<summary>Collections</summary>
+<summary><b>Collections</b></summary>
 
 * [`Min, max element`](#min-max-elements)
 
 </details>
 
 <details>
-<summary>Maps</summary>
+<summary><b>Maps</b></summary>
 
 * [`Map initialization`](#Map-initialization)
 * [`Unmodifiable map initialization`](#Unmodifiable-map-initialization)
@@ -53,7 +53,7 @@ Java code snippets
 </details>
 
 <details>
-<summary>Min Heap, Max Heap, PriorityQueue</summary>
+<summary><b>Min Heap, Max Heap, PriorityQueue</b></summary>
 
 * [`Min Heap initialization`](#Min-Heap-initialization)
 * [`Max Heap initialization`](#Max-Heap-initialization)
@@ -88,6 +88,41 @@ System.out.println(Arrays.toString(array));     // int[] for example
 System.out.println(Arrays.deepToString(array)); // int[][] for example
 ```
 
+<br>[⬆ back to contents](#Table-of-contents)
+
+## Sets
+
+### Set initialization
+
+Using `add()`:
+```java
+Set<Integer> set = new HashSet<Integer>() {{
+    add(1);
+    add(2);
+    add(3);
+}};
+```
+Using other collections:
+```java
+Set<Integer> set = new HashSet<>(Arrays.asList(1, 2, 3));
+```
+Using `Collections.addAll`:
+```java
+Set<Integer> mutableSet;
+Collections.addAll(mutableSet = new HashSet<>(), 1, 2, 3);
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Unmodifiable set initialization
+
+```java
+Set<Integer> set = Set.of(1, 2, 3);
+    
+set = Collections.singleton(1);
+
+set = Collections.emptySet();
+```
 <br>[⬆ back to contents](#Table-of-contents)
 
 ## Lists
@@ -138,41 +173,6 @@ System.out.println(list);  // toString()
 
 <br>[⬆ back to contents](#Table-of-contents)
 
-## Sets
-
-### Set initialization
-
-Using `add()`:
-```java
-Set<Integer> set = new HashSet<Integer>() {{
-    add(1);
-    add(2);
-    add(3);
-}};
-```
-Using other collections:
-```java
-Set<Integer> set = new HashSet<>(Arrays.asList(1, 2, 3));
-```
-Using `Collections.addAll`:
-```java
-Set<Integer> mutableSet;
-Collections.addAll(mutableSet = new HashSet<>(), 1, 2, 3);
-```
-
-<br>[⬆ back to contents](#Table-of-contents)
-
-### Unmodifiable set initialization
-
-```java
-Set<Integer> set = Set.of(1, 2, 3);
-    
-set = Collections.singleton(1);
-
-set = Collections.emptySet();
-```
-<br>[⬆ back to contents](#Table-of-contents)
-
 ## Collections
 
 ### Min, max elements
@@ -182,8 +182,6 @@ Collections.min(set);
 Collections.max(set);
 ```
 <br>[⬆ back to contents](#Table-of-contents)
-
-
 
 ## Maps
 
