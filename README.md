@@ -9,9 +9,11 @@ Java code snippets
 * [`Array initialization`](#Array-initialization)
 * [`Fill the array`](#Fill-the-array)
 * [`Output the array`](#Output-the-array)
+* [`Concatenate two arrays`](#Concatenate-two-arrays)
 
 &nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
+* [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 
 </details>
 
@@ -26,7 +28,7 @@ Java code snippets
 
 &nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
-
+* [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 
 </details>
 
@@ -42,7 +44,7 @@ Java code snippets
 
 &nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
-
+* [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 
 </details>
 
@@ -53,7 +55,8 @@ Java code snippets
 
 &nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
-
+* [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
+* 
 </details>
 
 <details>
@@ -61,6 +64,7 @@ Java code snippets
 
 * [`Stream initialization`](#stream-initialization)
 * [`Check if all elements are equal`](#check-if-all-elements-are-equal)
+* [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 
 </details>
 
@@ -108,6 +112,18 @@ Arrays.fill(ar, 1, 5, 2);  // [1, 2, 2, 2, 2, 1, 1, 1, 1, 1]
 ```java
 System.out.println(Arrays.toString(array));     // int[] for example
 System.out.println(Arrays.deepToString(array)); // int[][] for example
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Concatenate two arrays
+
+```java
+public static <T> T[] arrayConcat(T[] first, T[] second) {
+    var result = Arrays.copyOf(first, first.length + second.length);
+    System.arraycopy(second, 0, result, first.length, second.length);
+    return result;
+}
 ```
 
 <br>[⬆ back to contents](#Table-of-contents)
@@ -259,6 +275,13 @@ Stream.generate(Math::random)
 
 ```java
 return intStream.distinct().count() == 1;
+```
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Find maximum integer from the stream
+
+```java
+return intStream.reduce(Integer.MIN_VALUE, Integer::max);
 ```
 <br>[⬆ back to contents](#Table-of-contents)
 
