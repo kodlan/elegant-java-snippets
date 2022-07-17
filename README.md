@@ -38,6 +38,7 @@ Java code snippets
 * [`List initialization`](#List-initialization)
 * [`Unmodifiable list initialization`](#Unmodifiable-list-initialization)
 * [`List output`](#List-output)
+* [`List sort`](#List-sort)
 
 &nbsp;&nbsp;&nbsp;Common for collections:
 * [`Min, max element`](#min-max-elements)
@@ -207,6 +208,38 @@ list = Collections.emptyList();
 
 ```java
 System.out.println(list);  // toString()
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### List sort
+
+Using `Collections`
+```java
+Collections.sort(list);
+Collections.sort(list, Collections.reverseOrder());
+
+Collections.sort(list, (a, b) -> Integer.compare(a.start, b.start))
+Collections.sort(list, Comparator.comparingInt(a -> a.start))
+```
+
+Using `List.sort(Comparator<? super E> c)`:
+```java
+list.sort(Comparator.naturalOrder());
+list.sort(Comparator.reverseOrder());
+
+list.sort(Collections.reverseOrder());
+```
+
+Using `Stream.sorted()`:
+```java
+List<String> sorted = list.stream()
+    .sorted()
+    .collect(Collectors.toList());
+
+sorted = list.stream()
+    .sorted(Comparator.reverseOrder())
+    .collect(Collectors.toList());
 ```
 
 <br>[⬆ back to contents](#Table-of-contents)
