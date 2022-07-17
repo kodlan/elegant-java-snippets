@@ -9,6 +9,7 @@ Java code snippets
 * [`Array initialization`](#Array-initialization)
 * [`Fill the array`](#Fill-the-array)
 * [`Output the array`](#Output-the-array)
+* [`Sort the array`](#Sort-the-array)
 * [`Concatenate two arrays`](#Concatenate-two-arrays)
 
 &nbsp;&nbsp;&nbsp;[Initializa a stream](#stream-initialization) and then:
@@ -113,6 +114,18 @@ Arrays.fill(ar, 1, 5, 2);  // [1, 2, 2, 2, 2, 1, 1, 1, 1, 1]
 ```java
 System.out.println(Arrays.toString(array));     // int[] for example
 System.out.println(Arrays.deepToString(array)); // int[][] for example
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Sort the array
+
+```java
+Arrays.sort(array);
+
+Arrays.sort(arr, 1, 5); // sort only elements 1-5
+
+Arrays.sort(arr, Collections.reverseOrder()); 
 ```
 
 <br>[⬆ back to contents](#Table-of-contents)
