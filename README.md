@@ -11,7 +11,7 @@ Java code snippets
 * [`Output the array`](#Output-the-array)
 * [`Concatenate two arrays`](#Concatenate-two-arrays)
 
-&nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
+&nbsp;&nbsp;&nbsp;[Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 
@@ -26,7 +26,7 @@ Java code snippets
 &nbsp;&nbsp;&nbsp;Common for collections:
 * [`Min, max element`](#min-max-elements)
 
-&nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
+&nbsp;&nbsp;&nbsp;[Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 
@@ -42,7 +42,7 @@ Java code snippets
 &nbsp;&nbsp;&nbsp;Common for collections:
 * [`Min, max element`](#min-max-elements)
 
-&nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
+&nbsp;&nbsp;&nbsp;[Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 
@@ -53,7 +53,7 @@ Java code snippets
 
 * [`Min, max element`](#min-max-elements)
 
-&nbsp;&nbsp;&nbsp;* [Initializa a stream](#stream-initialization) and then:
+&nbsp;&nbsp;&nbsp;[Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 * 
