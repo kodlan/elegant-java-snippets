@@ -4,7 +4,7 @@ Java code snippets
 ## Table of contents
 
 <details>
-<summary><b>Arrays</b></summary>
+<summary><b>🔢 Arrays</b></summary>
 
 * [`Array initialization`](#Array-initialization)
 * [`Fill the array`](#Fill-the-array)
@@ -18,7 +18,7 @@ Java code snippets
 </details>
 
 <details>
-<summary><b>Sets</b></summary>
+<summary><b>🍱 Sets</b></summary>
 
 * [`Set initialization`](#Set-initialization)
 * [`Unmodifiable set initialization`](#Unmodifiable-set-initialization)
@@ -33,7 +33,7 @@ Java code snippets
 </details>
 
 <details>
-<summary><b>Lists</b></summary>
+<summary><b>🗂 Lists</b></summary>
 
 * [`List initialization`](#List-initialization)
 * [`Unmodifiable list initialization`](#Unmodifiable-list-initialization)
@@ -49,7 +49,7 @@ Java code snippets
 </details>
 
 <details>
-<summary><b>Collections</b></summary>
+<summary><b>📦 Collections</b></summary>
 
 * [`Min, max element`](#min-max-elements)
 
@@ -60,7 +60,7 @@ Java code snippets
 </details>
 
 <details>
-<summary><b>Streams</b></summary>
+<summary><b>🎏 Streams</b></summary>
 
 * [`Stream initialization`](#stream-initialization)
 * [`Check if all elements are equal`](#check-if-all-elements-are-equal)
@@ -69,7 +69,7 @@ Java code snippets
 </details>
 
 <details>
-<summary><b>Maps</b></summary>
+<summary><b>🗺 Maps</b></summary>
 
 * [`Map initialization`](#Map-initialization)
 * [`Unmodifiable map initialization`](#Unmodifiable-map-initialization)
@@ -79,14 +79,14 @@ Java code snippets
 </details>
 
 <details>
-<summary><b>Min Heap, Max Heap, PriorityQueue</b></summary>
+<summary><b>👨‍👦 Min Heap, Max Heap, PriorityQueue</b></summary>
 
 * [`Min Heap initialization`](#Min-Heap-initialization)
 * [`Max Heap initialization`](#Max-Heap-initialization)
 
 </details>
 
-## Arrays
+## 🔢 Arrays
 
 ### Array initialization
 
@@ -128,7 +128,7 @@ public static <T> T[] arrayConcat(T[] first, T[] second) {
 
 <br>[⬆ back to contents](#Table-of-contents)
 
-## Sets
+## 🍱 Sets
 
 ### Set initialization
 
@@ -163,7 +163,7 @@ set = Collections.emptySet();
 ```
 <br>[⬆ back to contents](#Table-of-contents)
 
-## Lists
+## 🗂 Lists
 
 ### List initialization
 
@@ -211,7 +211,7 @@ System.out.println(list);  // toString()
 
 <br>[⬆ back to contents](#Table-of-contents)
 
-## Collections
+## 📦 Collections
 
 ### Min, max elements
 
@@ -221,7 +221,7 @@ Collections.max(collection);
 ```
 <br>[⬆ back to contents](#Table-of-contents)
 
-## Streams
+## 🎏 Streams
 
 ### Stream initialization
 
@@ -285,7 +285,7 @@ return intStream.reduce(Integer.MIN_VALUE, Integer::max);
 ```
 <br>[⬆ back to contents](#Table-of-contents)
 
-## Maps
+## 🗺 Maps
 
 ### Map initialization
 
@@ -352,7 +352,7 @@ entries.sort(Map.Entry.<String, String>comparingByValue().reversed());
 
 <br>[⬆ back to contents](#Table-of-contents)
 
-## Min Heap, Max Heap, PriorityQueue
+## 👨‍👦 Min Heap, Max Heap, PriorityQueue
 
 ### Min Heap initialization
 
