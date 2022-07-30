@@ -40,6 +40,7 @@ Java code snippets
 * [`Unmodifiable list initialization`](#Unmodifiable-list-initialization)
 * [`List output`](#List-output)
 * [`List sort`](#List-sort)
+* [`Binary search`](#Binary-search)
 
 &nbsp;&nbsp;&nbsp;Common for collections:
 * [`Min, max element`](#min-max-elements)
@@ -255,6 +256,14 @@ sorted = list.stream()
     .collect(Collectors.toList());
 ```
 
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Binary search
+
+```java
+int index = Collections.binarySearch(list, key);
+index = Collections.binarySearch(list, key, comparator);
+```
 <br>[⬆ back to contents](#Table-of-contents)
 
 ## 📦 Collections
