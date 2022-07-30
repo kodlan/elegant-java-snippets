@@ -263,7 +263,11 @@ sorted = list.stream()
 
 ```java
 Collections.min(collection);
+Collections.min(collection, comparator);
+
+
 Collections.max(collection);
+Collections.max(collection, comparator);
 ```
 <br>[⬆ back to contents](#Table-of-contents)
 
