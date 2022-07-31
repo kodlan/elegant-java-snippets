@@ -140,6 +140,15 @@ public static <T> T[] arrayConcat(T[] first, T[] second) {
     return result;
 }
 ```
+or using streams:
+```java
+public static <T> T[] concat(T[] first, T[] second) {
+    return Stream.concat(
+            Stream.of(first),
+            Stream.of(second)
+    ).toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, first.getClass()));
+}
+```
 
 <br>[⬆ back to contents](#Table-of-contents)
 
