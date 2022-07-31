@@ -41,6 +41,8 @@ Java code snippets
 * [`List output`](#List-output)
 * [`List sort`](#List-sort)
 * [`Binary search`](#Binary-search)
+* [`Reverse list`](#Reverse-list)
+* [`Rotate list`](#Rotate-list)
 
 &nbsp;&nbsp;&nbsp;Common for collections:
 * [`Min, max element`](#min-max-elements)
@@ -273,6 +275,22 @@ sorted = list.stream()
 int index = Collections.binarySearch(list, key);
 index = Collections.binarySearch(list, key, comparator);
 ```
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Reverse list
+
+```java
+Collections.reverse(list);
+```
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Rotate list
+
+```java
+Collections.rotate(list, distance);
+```
+for example list `1, 2, 3, 4, 5` rotated by distance 2 becomes `4, 5, 1, 2, 3`.
+Can be used with negative values.
 <br>[⬆ back to contents](#Table-of-contents)
 
 ## 📦 Collections
