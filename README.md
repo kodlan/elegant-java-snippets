@@ -210,13 +210,20 @@ List<String> list = new ArrayList<>(Arrays.asList(array));  // not for int[] due
 List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
 ```
 
+About `Arrays.asList`:
+```
+Creates a wrapper that implements List<Integer>, which makes the original 
+array available as a list. Nothing is copied. Operations are propageted to the
+original array. Adding or removing elements from the list are not allowed.
+List returned is not usual ArrayList.
+```
 
 <br>[⬆ back to contents](#Table-of-contents)
 
 ### Unmodifiable list initialization
 
 ```java
-List<Integer> list = Arrays.asList(1, 2, 3);
+List<Integer> list = Arrays.asList(1, 2, 3); // can be modified. add, remove is not supported
 
 list = Collections.unmodifiableList(Arrays.asList(1, 2, 3));
 
