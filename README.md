@@ -15,6 +15,7 @@ Java code snippets
 &nbsp;&nbsp;&nbsp;[Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
+* [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
 
 </details>
 
@@ -30,6 +31,7 @@ Java code snippets
 &nbsp;&nbsp;&nbsp;[Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
+* [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
 
 </details>
 
@@ -50,6 +52,7 @@ Java code snippets
 &nbsp;&nbsp;&nbsp;[Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
+* [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
 
 </details>
 
@@ -61,7 +64,8 @@ Java code snippets
 &nbsp;&nbsp;&nbsp;[Initializa a stream](#stream-initialization) and then:
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
-* 
+* [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
+
 </details>
 
 <details>
@@ -70,6 +74,7 @@ Java code snippets
 * [`Stream initialization`](#stream-initialization)
 * [`Check if all elements are equal`](#check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
+* [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
 
 </details>
 
@@ -377,6 +382,17 @@ return intStream.distinct().count() == 1;
 return intStream.reduce(Integer.MIN_VALUE, Integer::max);
 ```
 <br>[⬆ back to contents](#Table-of-contents)
+
+### Count occurrences of some number in a stream
+
+```java
+return intStream
+    .filter(number -> number == value)
+    .count();
+```
+<br>[⬆ back to contents](#Table-of-contents)
+
+
 
 ## 🗺 Maps
 
