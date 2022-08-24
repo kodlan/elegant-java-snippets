@@ -16,6 +16,7 @@ Java code snippets
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 * [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
+* [`Get distinct values`](#Get-distinct-values)
 
 </details>
 
@@ -53,6 +54,7 @@ Java code snippets
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 * [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
+* [`Get distinct values`](#Get-distinct-values)
 
 </details>
 
@@ -65,6 +67,7 @@ Java code snippets
 * [`Check if all elements are equal`](#Check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 * [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
+* [`Get distinct values`](#Get-distinct-values)
 
 </details>
 
@@ -75,6 +78,7 @@ Java code snippets
 * [`Check if all elements are equal`](#check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 * [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
+* [`Get distinct values`](#Get-distinct-values)
 
 </details>
 
@@ -391,6 +395,14 @@ return intStream
     .count();
 ```
 <br>[⬆ back to contents](#Table-of-contents)
+
+### Get distinct values
+
+```java
+return intStream.distinct().toArray();
+```
+<br>[⬆ back to contents](#Table-of-contents)
+
 
 
 
