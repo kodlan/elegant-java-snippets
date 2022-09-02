@@ -89,6 +89,7 @@ Java code snippets
 * [`Unmodifiable map initialization`](#Unmodifiable-map-initialization)
 * [`Sort map by keys`](#Sort-map-by-keys)
 * [`Sort map by values`](#Sort-map-by-values)
+* [`Merge two maps`](#Merge-two-maps)
 
 </details>
 
@@ -469,6 +470,42 @@ List<Entry<String, String>> entries = new ArrayList<>(map.entrySet());
 entries.sort(Map.Entry.comparingByValue());
 // or reversed
 entries.sort(Map.Entry.<String, String>comparingByValue().reversed());
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Merge two maps
+
+Using `Map.putAll()`:
+```java
+map1.putAll(map2); // duplicate values will be overridden by values from map2
+```
+
+Using `Map.merge()`
+```java
+map2.forEach((key, value) ->
+    map1.merge(key, value, (v1, v2) -> v1 + v2));
+// If the specified key is not already associated with a value 
+// or is associated with null, the Map.merge() method associates 
+// it with the given non-null value.
+    
+// Otherwise, the Map.merge() method replaces the value with the 
+// results of the given remapping function. If the result of the 
+// remapping function is null, it removes the key altogether.
+```
+
+Using `Stream.concat()`:
+```java
+Stream<Map.Entry<String, Integer>> combined = Stream.concat(map1.entrySet().stream(), map2.entrySet().stream());
+Map<String, Integer> merged = combined.collect(
+    Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+// in case of duplicate entries this throw an IllegalStateException exception.
+
+// To handle duplicate entries pass a merger function as a third parameter to the collector:
+Map<String, Integer> merged = combined.collect(
+    Collectors.toMap(Map.Entry::getKey,
+           Map.Entry::getValue,
+           (v1, v2) -> v1 + v2));
 ```
 
 <br>[⬆ back to contents](#Table-of-contents)
