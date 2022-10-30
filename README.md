@@ -101,6 +101,16 @@ Java code snippets
 
 </details>
 
+<details>
+<summary><b>📐 Comparators</b></summary>
+
+* [`Comparator.comparing`](#Comparator.comparing)
+* [`Comparator reversing`](#Comparator-reversing)
+* [`Comparator grouping`](#Comparator-grouping)
+* [`Handling null values`](#Handling-null-values)
+
+</details>
+
 ## 🔢 Arrays
 
 ### Array initialization
@@ -534,6 +544,46 @@ PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
 PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
 
 
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+## 📐 Comparators
+
+### Comparator.comparing
+
+```java
+Comparator.comparing(Employee::getName).reversed();
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Comparator reversing
+
+```java
+Comparator.comparing(Employee::getName).reversed();
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Comparator grouping
+
+```java
+Comparator<Employee> groupByComparator = Comparator.comparing(Employee::getName)
+    .thenComparing(Employee::getDob)
+    .thenComparing(Employee::getId);
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Handling null values
+
+```java
+Comparator<Employee> comparing =
+    comparing(Employee::getName, nullsFirst(naturalOrder()));
+
+Comparator<Employee> comparing =
+    comparing(Employee::getName, nullsLast(naturalOrder()));
 ```
 
 <br>[⬆ back to contents](#Table-of-contents)
