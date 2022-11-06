@@ -117,6 +117,7 @@ Java code snippets
 * [`Common functional interfaces`](#Common-functional-interfaces)
 * [`Partial initialization`](#Partial-initialization)
 * [`Handling exceptions when interface doesn't throw exception`](#functional-handle-exception)
+* [`Constructor references`](#Constructor-references)
 
 </details>
 
@@ -683,6 +684,20 @@ new Thread(
     ThrowingRunnable.handleThrowingRunnable(
         this::methodThatThrowsException,
         exception -> logger.info("Something happened", exception))));
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Constructor references
+
+```java
+Supplier<Apple> appleSupplier = Apple::new;
+Apple apple = appleSupplier.get();
+
+// or if constructor has arguments:
+
+BiFunction<Color, Integer, Apple> supplier = Apple::new;
+Apple apple = supplier.apply(GREEN, 110);
 ```
 
 <br>[⬆ back to contents](#Table-of-contents)
