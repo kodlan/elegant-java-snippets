@@ -112,9 +112,10 @@ Java code snippets
 </details>
 
 <details>
-<summary><b>➡ Functional interfaces</b></summary>
+<summary><b>➡ Functional</b></summary>
 
 * [`Common functional interfaces`](#Common-functional-interfaces)
+* [`Partial initialization`](#Partial-initialization)
 
 </details>
 
@@ -595,7 +596,7 @@ Comparator<Employee> comparing =
 
 <br>[⬆ back to contents](#Table-of-contents)
 
-## ➡ Functional interfaces
+## ➡ Functional
 
 ### Common functional interfaces
 
@@ -610,5 +611,23 @@ Comparator<Employee> comparing =
 | <nobr>`(T, U) -> boolean`</nobr> |  <nobr>`BiPredicate<T, U>`</nobr>  |                                                                                                                                                                                                                                                |
 | <nobr>`(T, U) -> void`</nobr>    |  <nobr>`BiConsumer<T, U>`</nobr>   |                                                                                                                                                                                  `ObjIntConsumer<T>, ObjLongConsumer<T>, ObjDoubleConsumer<T>` |
 | <nobr>`(T, U) -> R`</nobr>       | <nobr>`BiFunction<T, U, R>`</nobr> |                                                                                                                                                                      `ToIntBiFunction<T, U>, ToLongBiFunction<T, U>, ToDoubleBiFunction<T, U>` |
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+### Partial initialization
+
+```java
+public interface TriFunction<T, U, V, R> {
+  R apply(T t, U u, V v);
+}
+
+TriFunction<Integer, Integer, Integer, Integer> add = (x, y, z) -> x + y + z;
+
+Function<Integer, BiFunction<Integer, Integer, Integer>> addPartial = (x) -> (y, z) -> add.apply(x, y, z);
+
+BiFunction<Integer, Integer, Integer> add5 = addPartial.apply(5);
+
+add5.apply(6, 7);
+```
 
 <br>[⬆ back to contents](#Table-of-contents)
