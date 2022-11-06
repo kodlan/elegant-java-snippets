@@ -111,6 +111,13 @@ Java code snippets
 
 </details>
 
+<details>
+<summary><b>➡ Functional interfaces</b></summary>
+
+* [`Common functional interfaces`](#Common-functional-interfaces)
+
+</details>
+
 ## 🔢 Arrays
 
 ### Array initialization
@@ -585,5 +592,23 @@ Comparator<Employee> comparing =
 Comparator<Employee> comparing =
     comparing(Employee::getName, nullsLast(naturalOrder()));
 ```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+## ➡ Functional interfaces
+
+### Common functional interfaces
+
+| lamdba                           |        Functional interface        |                                                                                                                                                                                                                               Other interfaces |
+|:---------------------------------|:----------------------------------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| <nobr>`T -> boolean`</nobr>      |    <nobr>`Precdicate<T>`</nobr>    |                                                                                                                                                                                                 `IntPredicate, LongPredicate, DoublePredicate` |
+| <nobr>`T -> void`</nobr>         |     <nobr>`Consumer<T>`</nobr>     |                                                                                                                                                                                                     `IntCosumer, LongConsumer, DoubleConsumer` |
+| <nobr>`T -> R`</nobr>            |   <nobr>`Function<T, R>`</nobr>    | `IntFunction<R>, IntToDoubleFunctiona, IntToLongFunction, LongFunction<R>, LongToDoubleFunction, LongToIntFunctiction, DoubleFunction<R>, DoubleToIntFunction, DoubleToLongFunction, ToIntFunction<T>, ToDoubleFunction<T>, ToLongFunction<T>` |
+| <nobr>`() -> T`</nobr>           |     <nobr>`Supplier<T>`<nobr>      |                                                                                                                                                                                    `BooleanSuppier, IntSupplier, LongSupplier, DoubleSupplier` |
+| <nobr>`T -> T`<nobr>             |  <nobr>`UnaryOperator<T>`</nobr>   |                                                                                                                                                                                    `IntUnaryOperator, LongUnaryOperator, DoubleUnaryOperartor` |
+| <nobr>`(T, T) -> T`</nobr>       |  <nobr>`BinaryOperator<T>`</nobr>  |                                                                                                                                                                                  `IntBinaryOperator, LongBinaryOperator, DoubleBinaryOperator` |
+| <nobr>`(T, U) -> boolean`</nobr> |  <nobr>`BiPredicate<T, U>`</nobr>  |                                                                                                                                                                                                                                                |
+| <nobr>`(T, U) -> void`</nobr>    |  <nobr>`BiConsumer<T, U>`</nobr>   |                                                                                                                                                                                  `ObjIntConsumer<T>, ObjLongConsumer<T>, ObjDoubleConsumer<T>` |
+| <nobr>`(T, U) -> R`</nobr>       | <nobr>`BiFunction<T, U, R>`</nobr> |                                                                                                                                                                      `ToIntBiFunction<T, U>, ToLongBiFunction<T, U>, ToDoubleBiFunction<T, U>` |
 
 <br>[⬆ back to contents](#Table-of-contents)
