@@ -116,6 +116,7 @@ Java code snippets
 
 * [`Common functional interfaces`](#Common-functional-interfaces)
 * [`Partial initialization`](#Partial-initialization)
+* [`Handling exceptions when interface doesn't throw exception`](#functional-handle-exception)
 
 </details>
 
@@ -628,6 +629,60 @@ Function<Integer, BiFunction<Integer, Integer, Integer>> addPartial = (x) -> (y,
 BiFunction<Integer, Integer, Integer> add5 = addPartial.apply(5);
 
 add5.apply(6, 7);
+```
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+<a name="functional-handle-exception"></a>
+### Handling exceptions when interface doesn't throw exception
+For example in case of Runnable:
+
+```java
+@FunctionalInterface
+public interface Runnable {
+  public abstract void run();
+}
+```
+
+Create a Thread using lambda that throws exception:
+```java
+new Thread(() -> {
+      try {
+        methodThatThrowsException();
+      } catch (Exception e) {
+        // do something
+      }
+    });
+```
+
+To fix the try/catch in lambda, add ThrowingRunnable interface:
+```java
+@FunctionalInterface
+public interface ThrowingRunnable<E extends Exception> {
+
+  void run() throws E;
+
+  static <E extends Exception> Runnable handleThrowingRunnable(
+      ThrowingRunnable<E> throwingRunnable, Consumer<Exception> handler) {
+
+    return () -> {
+      try {
+        throwingRunnable.run();
+      } catch (Exception ex) {
+        handler.accept(ex);
+      }
+    };
+  }
+}
+```
+
+And then:
+
+```java
+new Thread(
+    ThrowingRunnable.handleThrowingRunnable(
+        this::methodThatThrowsException,
+        exception -> logger.info("Something happened", exception))));
 ```
 
 <br>[⬆ back to contents](#Table-of-contents)
