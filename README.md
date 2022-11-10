@@ -79,6 +79,8 @@ Java code snippets
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 * [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
 * [`Get distinct values`](#Get-distinct-values)
+* [`All pairs of numbers from two lists`](#All-pairs-of-numbers-from-two-lists)
+
 
 </details>
 
@@ -424,7 +426,18 @@ return intStream.distinct().toArray();
 ```
 <br>[⬆ back to contents](#Table-of-contents)
 
+### All pairs of numbers from two lists
 
+```java
+List<Integer> numbers1 = Arrays.asList(1, 2, 3);
+List<Integer> numbers2 = Arrays.asList(4, 5, 6);
+
+List<int[]> pairs = numbers1.stream()
+    .flatMap(i -> numbers2.stream()
+        .map(j -> new int[] {i, j}))
+    .collect(toList());
+```
+<br>[⬆ back to contents](#Table-of-contents)
 
 
 ## 🗺 Maps
