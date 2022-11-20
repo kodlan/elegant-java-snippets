@@ -399,26 +399,34 @@ Stream.generate(Math::random)
 
 ### All intermediate and terminal operations
 
-| Operation   | Type                              | Return type   | Fn interface             | Fn descriptor    |
-|:------------|:----------------------------------|:--------------|:-------------------------|:-----------------|
-| `filter`    | Intermediate                      | `Stream<T>`   | `Predicate<T>`           | `T -> boolean`   |
-| `distinct`  | Intermediate (stateful-unbounded) | `Stream<T>`   |                          |                  |
-| `takeWhile` | Intermediate                      | `Stream<T>`   | `Predicate<T>`           | `T -> boolean`   |
-| `dropWhile` | Intermediate                      | `Stream<T>`   | `Predicate<T>`           | `T -> boolean`   |
-| `skip`      | Intermediate (stateful-bounded)   | `Stream<T>`   | `long`                   |                  |
-| `limit`     | Intermediate (stateful-bounded)   | `Stream<T>`   | `long`                   |                  |
-| `map`       | Intermediate                      | `Stream<R>`   | `Function<T, R>`         | `T -> R`         |
-| `flatMap`   | Intermediate                      | `Stream<R>`   | `Function<T, Stream<R>>` | `T -> Stream<R>` |
-| `sorted`    | Intermediate (stateful-unbounded) | `Stream<T>`   | `Comparator<T>`          | `(T, T) -> int`  |
-| `anyMatch`  | Terminal                          | `boolean`     | `Predicate<T>`           | `T -> boolean`   |
-| `noneMatch` | Terminal                          | `boolean`     | `Predicate<T>`           | `T -> boolean`   |
-| `allMatch`  | Terminal                          | `boolean`     | `Predicate<T>`           | `T -> boolean`   |
-| `findAny`   | Terminal                          | `Optional<T>` |                          |                  |
-| `findFirst` | Terminal                          | `Optional<T>` |                          |                  |
-| `forEach`   | Terminal                          | `void`        | `Consumer<T>`            | `T -> void`      |
-| `collect`   | Terminal                          | `R`           | `Collector<T, A, R>`     |                  |
-| `reduce`    | Terminal (stateful-bounded)       | `Optional<T>` | `BinaryOperaror<T>`      | `(T, T) -> T`    |
-| `count`     | Terminal                          | `long`        |                          |                  |
+| Operation         | Type                              | Return type    | Fn interface               | Fn descriptor       |
+|:------------------|:----------------------------------|:---------------|:---------------------------|:--------------------|
+| `filter`          | Intermediate                      | `Stream<T>`    | `Predicate<T>`             | `T -> boolean`      |
+| `distinct`        | Intermediate (stateful-unbounded) | `Stream<T>`    |                            |                     |
+| `takeWhile`       | Intermediate                      | `Stream<T>`    | `Predicate<T>`             | `T -> boolean`      |
+| `dropWhile`       | Intermediate                      | `Stream<T>`    | `Predicate<T>`             | `T -> boolean`      |
+| `skip`            | Intermediate (stateful-bounded)   | `Stream<T>`    | `long`                     |                     |
+| `limit`           | Intermediate (stateful-bounded)   | `Stream<T>`    | `long`                     |                     |
+| `map`             | Intermediate                      | `Stream<R>`    | `Function<T, R>`           | `T -> R`            |
+| `mapToDouble`     | Intermediate                      | `DoubleStream` | `ToDoubleFunction<T>`      | `T -> DoubleStream` |
+| `mapToInt`        | Intermediate                      | `IntStream`    | `ToIntFunction<T>`         | `T -> IntStream`    |
+| `mapToLong`       | Intermediate                      | `LongStream`   | `ToLongFunction<T>`        | `T -> LongStream`   |
+| `flatMap`         | Intermediate                      | `Stream<R>`    | `Function<T, Stream<R>>`   | `T -> Stream<R>`    |
+| `flatMapToDouble` | Intermediate                      | `DoubleStream` | `Function<T, DoubleStream>` | `T -> DoubleStream` |
+| `flatMapToInt`    | Intermediate                      | `IntStream`    | `Function<T, IntStream>`   | `T -> IntStream`    |
+| `flatMapToLong`   | Intermediate                      | `LongStream`   | `Function<T, LongStream>`  | `T -> LongStream`   |
+| `sorted`          | Intermediate (stateful-unbounded) | `Stream<T>`    | `Comparator<T>`            | `(T, T) -> int`     |
+| `anyMatch`        | Terminal                          | `boolean`      | `Predicate<T>`             | `T -> boolean`      |
+| `noneMatch`       | Terminal                          | `boolean`      | `Predicate<T>`             | `T -> boolean`      |
+| `allMatch`        | Terminal                          | `boolean`      | `Predicate<T>`             | `T -> boolean`      |
+| `findAny`         | Terminal                          | `Optional<T>`  |                            |                     |
+| `findFirst`       | Terminal                          | `Optional<T>`  |                            |                     |
+| `forEach`         | Terminal                          | `void`         | `Consumer<T>`              | `T -> void`         |
+| `collect`         | Terminal                          | `R`            | `Collector<T, A, R>`       |                     |
+| `reduce`          | Terminal (stateful-bounded)       | `Optional<T>`  | `BinaryOperaror<T>`        | `(T, T) -> T`       |
+| `count`           | Terminal                          | `long`         |                            |                     |
+| `max`             | Terminal                          | `Optional<T>`  | `Comparator<T>`            |                     |
+| `min`             | Terminal                          | `Optional<T>`  | `Comparator<T>`            |                     |
 
 `bounded` - the internal state is of bounded size no matter how many elements are in the stream being processed
 
