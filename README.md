@@ -76,6 +76,7 @@ Java code snippets
 
 * [`Stream initialization`](#stream-initialization)
 * [`All intermediate and terminal operations`](#All-intermediate-and-terminal-operations)
+* [`IntStream methods`](#int-stream)
 * [`Check if all elements are equal`](#check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 * [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
@@ -435,6 +436,57 @@ can be added to the output stream.
 
 `stateful` - requires processing of all the elements in the stream (the largest number for example)
 
+<br>[⬆ back to contents](#Table-of-contents)
+
+<a name="int-stream"></a>
+### IntStream methods (not all of them)
+
+| Method           | Signature                                                    |
+|:-----------------|:-------------------------------------------------------------|
+| `allMatch`       | `boolean allMatch(IntPredicate predicate)`                   |
+| `anyMatch`       | `boolean anyMatch(IntPredicate predicate)`                   |
+| `asDoubleStream` | `DoubleStream asDoubleStream()`                              |
+| `asLongStream`   | `LongStream asLongStream()`                                  |
+| `average`        | `OptionalDouble average()`                                   |
+| `boxed`          | `Stream<Integer> boxed()`                                    |
+| `count`          | `long count()`                                               |
+| `distinct`       | `IntStream distinct()`                                       |
+| `filter`         | `IntStream filter(IntPredicate predicate)`                   |
+| `findAny`        | `OptionalInt findAny()`                                      |
+| `findFirst`      | `OptionalInt findFirst()`                                    |
+| `flatMap`        | `IntStream flatMap(IntFunction<? extends IntStream> mapper)` |
+| `forEach`        | `IntStream forEach(IntConsumer action)`                      |
+| `limit`          | `IntStream limit(long maxSize)`                              |
+| `map`            | `IntStream map(IntUnaryOperator mapper)`                     |
+| `mapToDouble`    | `DoubleStream mapToDouble(IntToDoubleFunction mapper)`       |
+| `mapToLong`      | `LongStream mapToLong(IntToLongFunction mapper)`             |
+| `mapToObj`       | `<U> Stream<U> mapToObj(IntFunction<? extends U> mapper)`    |
+| `max`            | `OptionalInt max()`                                          |
+| `min`            | `OptionalInt min()`                                          |
+| `noneMatch`      | `boolean noneMatch(IntPredicate predicate)`                  | 
+| `parallel`       | `IntStream parallel()`                                       |
+| `reduce`         | `OptionalInt reduce(IntBinaryOperator op)`                   |
+| `reduce`         | `OptionalInt reduce(int identity, IntBinaryOperator op)`     |
+| `sequential`     | `IntStream sequential()`                                     |
+| `skip`           | `IntStream skip(long n)`                                     |
+| `sorted`         | `IntStream sorted()`                                         |
+| `sum`            | `int sum()`                                                  |
+| `toArray`        | `int[] toArray()`                                            |
+
+Static initialization method:
+
+| Method        | Signature                                                            |
+|:--------------|:---------------------------------------------------------------------|
+| `concat`      | `static IntStream concat(IntStream a, IntStream b)`                  |
+| `empty()`     | `static IntStream empty()`                                           |
+| `generate`    | `static IntStream generate(IntSupplier s)`                           |
+| `iterate`     | `static IntStream iterate(int seed, IntUnaryOperator f)`             |
+| `of`          | `static IntStream of(int... values)`                                 |
+| `of`          | `static IntStream of(int t)`                                         |
+| `range`       | `static IntStream range(int startInclusive, int endExclusive)`       |
+| `rangeClosed` | `static IntStream rangeClosed(int startInclusive, int endInclusive)` |
+
+ 
 <br>[⬆ back to contents](#Table-of-contents)
 
 ### Check if all elements are equal
