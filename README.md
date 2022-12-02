@@ -77,6 +77,7 @@ Java code snippets
 * [`Stream initialization`](#stream-initialization)
 * [`All intermediate and terminal operations`](#All-intermediate-and-terminal-operations)
 * [`IntStream methods`](#int-stream)
+* [`LongStream methods`](#long-stream)
 * [`Check if all elements are equal`](#check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 * [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
@@ -487,6 +488,56 @@ Static initialization method:
 | `rangeClosed` | `static IntStream rangeClosed(int startInclusive, int endInclusive)` |
 
  
+<br>[⬆ back to contents](#Table-of-contents)
+
+<a name="long-stream"></a>
+### LongStream methods (not all of them)
+
+| Method           | Signature                                                       |
+|:-----------------|:----------------------------------------------------------------|
+| `allMatch`       | `boolean allMatch(LongPredicate predicate)`                     |
+| `anyMatch`       | `boolean anyMatch(LongPredicate predicate)`                     |
+| `asDoubleStream` | `DoubleStream asDoubleStream()`                                 |
+| `average`        | `OptionalDouble average()`                                      |
+| `boxed`          | `Stream<Long> boxed()`                                          |
+| `count`          | `long count()`                                                  |
+| `distinct`       | `LongStream distinct()`                                         |
+| `filter`         | `LongStream filter(LongPredicate predicate)`                    |
+| `findAny`        | `OptionalLong findAny()`                                        |
+| `findFirst`      | `OptionalLong findFirst()`                                      |
+| `flatMap`        | `LongStream flatMap(LongFunction<? extends LongStream> mapper)` |
+| `forEach`        | `LongStream forEach(LongConsumer action)`                       |
+| `limit`          | `LongStream limit(long maxSize)`                                |
+| `map`            | `LongStream map(LongUnaryOperator mapper)`                      |
+| `mapToDouble`    | `DoubleStream mapToDouble(LongToDoubleFunction mapper)`         |
+| `mapToInt`       | `IntStream mapToLong(LongToIntFunction mapper)`                 |
+| `mapToObj`       | `<U> Stream<U> mapToObj(IntFunction<? extends U> mapper)`       |
+| `max`            | `OptionalLong max()`                                            |
+| `min`            | `OptionalLong min()`                                            |
+| `noneMatch`      | `boolean noneMatch(LongPredicate predicate)`                    | 
+| `parallel`       | `LongStream parallel()`                                         |
+| `reduce`         | `OptionalLong reduce(LongBinaryOperator op)`                    |
+| `reduce`         | `OptionalLong reduce(long identity, LongBinaryOperator op)`     |
+| `sequential`     | `LongStream sequential()`                                       |
+| `skip`           | `LongStream skip(long n)`                                       |
+| `sorted`         | `LongStream sorted()`                                           |
+| `sum`            | `long sum()`                                                    |
+| `toArray`        | `long[] toArray()`                                              |
+
+Static initialization method:
+
+| Method        | Signature                                                               |
+|:--------------|:------------------------------------------------------------------------|
+| `concat`      | `static LongStream concat(LongStream a, LongStream b)`                  |
+| `empty()`     | `static LongStream empty()`                                             |
+| `generate`    | `static LongStream generate(LongSupplier s)`                            |
+| `iterate`     | `static LongStream iterate(int seed, LongUnaryOperator f)`              |
+| `of`          | `static LongStream of(long... values)`                                  |
+| `of`          | `static LongStream of(long t)`                                          |
+| `range`       | `static LongStream range(long startInclusive, long endExclusive)`       |
+| `rangeClosed` | `static LongStream rangeClosed(long startInclusive, long endInclusive)` |
+
+
 <br>[⬆ back to contents](#Table-of-contents)
 
 ### Check if all elements are equal
