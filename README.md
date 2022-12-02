@@ -670,6 +670,12 @@ PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder())
 
 ```java
 Comparator.comparing(Employee::getName).reversed();
+Comparator.comparing(Employee::getName, comparator).reversed();
+
+// or 
+Comparator.comparingInt(Employee::getIntValue);
+Comparator.comparingDouble(Employee::getDoubleValue);
+Comparator.comparingLong(Employee::getLongValue);
 ```
 
 <br>[⬆ back to contents](#Table-of-contents)
@@ -688,6 +694,11 @@ Comparator.comparing(Employee::getName).reversed();
 Comparator<Employee> groupByComparator = Comparator.comparing(Employee::getName)
     .thenComparing(Employee::getDob)
     .thenComparing(Employee::getId);
+
+// also
+Comparator.thenComparingInt(Employee::getIntValue);
+Comparator.thenComparingDouble(Employee::getDoubleValue);
+Comparator.thenComparingLong(Employee::getLongValue);
 ```
 
 <br>[⬆ back to contents](#Table-of-contents)
