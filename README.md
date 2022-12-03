@@ -78,6 +78,7 @@ Java code snippets
 * [`All intermediate and terminal operations`](#All-intermediate-and-terminal-operations)
 * [`IntStream methods`](#int-stream)
 * [`LongStream methods`](#long-stream)
+* [`DoubleStream methods`](#double-stream)
 * [`Check if all elements are equal`](#check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 * [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
@@ -537,6 +538,53 @@ Static initialization method:
 | `range`       | `static LongStream range(long startInclusive, long endExclusive)`       |
 | `rangeClosed` | `static LongStream rangeClosed(long startInclusive, long endInclusive)` |
 
+<br>[⬆ back to contents](#Table-of-contents)
+
+<a name="double-stream"></a>
+### DoubleStream methods (not all of them)
+
+| Method       | Signature                                                             |
+|:-------------|:----------------------------------------------------------------------|
+| `allMatch`   | `boolean allMatch(DoublePredicate predicate)`                         |
+| `anyMatch`   | `boolean anyMatch(DoublePredicate predicate)`                         |
+| `average`    | `OptionalDouble average()`                                            |
+| `boxed`      | `Stream<Double> boxed()`                                              |
+| `count`      | `Double count()`                                                      |
+| `distinct`   | `DoubleStream distinct()`                                             |
+| `filter`     | `DoubleStream filter(DoublePredicate predicate)`                      |
+| `findAny`    | `OptionalDouble findAny()`                                            |
+| `findFirst`  | `OptionalDouble findFirst()`                                          |
+| `flatMap`    | `DoubleStream flatMap(DoubleFunction<? extends DoubleStream> mapper)` |
+| `forEach`    | `DoubleStream forEach(DoubleConsumer action)`                         |
+| `limit`      | `DoubleStream limit(double maxSize)`                                  |
+| `map`        | `DoubleStream map(DoubleUnaryOperator mapper)`                        |
+| `mapToLong`  | `DoubleStream mapToLong(DoubleToLongFunction mapper)`                 |
+| `mapToInt`   | `IntStream mapToDouble(DoubleToIntFunction mapper)`                   |
+| `mapToObj`   | `<U> Stream<U> mapToObj(IntFunction<? extends U> mapper)`             |
+| `max`        | `OptionalDouble max()`                                                |
+| `min`        | `OptionalDouble min()`                                                |
+| `noneMatch`  | `boolean noneMatch(DoublePredicate predicate)`                        | 
+| `parallel`   | `DoubleStream parallel()`                                             |
+| `reduce`     | `OptionalDouble reduce(DoubleBinaryOperator op)`                      |
+| `reduce`     | `OptionalDouble reduce(double identity, DoubleBinaryOperator op)`     |
+| `sequential` | `DoubleStream sequential()`                                           |
+| `skip`       | `DoubleStream skip(long n)`                                           |
+| `sorted`     | `DoubleStream sorted()`                                               |
+| `sum`        | `double sum()`                                                        |
+| `toArray`    | `double[] toArray()`                                                  |
+
+Static initialization method:
+
+| Method        | Signature                                                                 |
+|:--------------|:--------------------------------------------------------------------------|
+| `concat`      | `static DoubleStream concat(DoubleStream a, DoubleStream b)`              |
+| `empty()`     | `static DoubleStream empty()`                                             |
+| `generate`    | `static DoubleStream generate(DoubleSupplier s)`                          |
+| `iterate`     | `static DoubleStream iterate(int seed, DoubleUnaryOperator f)`            |
+| `of`          | `static DoubleStream of(long... values)`                                  |
+| `of`          | `static DoubleStream of(long t)`                                          |
+| `range`       | `static DoubleStream range(long startInclusive, long endExclusive)`       |
+| `rangeClosed` | `static DoubleStream rangeClosed(long startInclusive, long endInclusive)` |
 
 <br>[⬆ back to contents](#Table-of-contents)
 
