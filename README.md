@@ -79,6 +79,7 @@ Java code snippets
 * [`IntStream methods`](#int-stream)
 * [`LongStream methods`](#long-stream)
 * [`DoubleStream methods`](#double-stream)
+* [`Collectors`](#collectors)
 * [`Check if all elements are equal`](#check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 * [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
@@ -585,6 +586,52 @@ Static initialization method:
 | `of`          | `static DoubleStream of(long t)`                                          |
 | `range`       | `static DoubleStream range(long startInclusive, long endExclusive)`       |
 | `rangeClosed` | `static DoubleStream rangeClosed(long startInclusive, long endInclusive)` |
+
+<br>[⬆ back to contents](#Table-of-contents)
+
+
+### Collectors
+`Collector<T,A,R>`:
+
+T - the type of input elements to the reduction operation
+
+A - the mutable accumulation type of the reduction operation (often hidden as an implementation detail)
+
+R - the result type of the reduction operation
+
+| Return type                              | Method (concurent methods skipped, all methods are static)                                                                                                |
+|:-----------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Collector<T,?,Double>`                  | `averagingDouble(ToDoubleFunction<? super T> mapper)`                                                                                                     |
+| `Collector<T,?,Double>`                  | `averagingInt(ToIntFunction<? super T> mapper)`                                                                                                           |
+| `Collector<T,?,Double>`                  | `averagingLong(ToLongFunction<? super T> mapper)`                                                                                                         |
+| `Collector<T,A,RR>`                      | `collectingAndThen(Collector<T,A,R> downstream, Function<R,RR> finisher)`                                                                                 |
+| `Collector<T,?,Long>`                    | `counting()`                                                                                                                                              |
+| `Collector<T,?,Map<K,List<T>>>`          | `groupingBy(Function<? super T,? extends K> classifier)`                                                                                                  |
+| `Collector<T,?,Map<K,D>>`                | `groupingBy(Function<? super T,? extends K> classifier, Collector<? super T,A,D> downstream)`                                                             |
+| `Collector<T,?,M extends Map<K,D>>`      | `groupingBy(Function<? super T,? extends K> classifier, Supplier<M> mapFactory, Collector<? super T,A,D> downstream)`                                     |
+| `Collector<CharSequence,?,String>`       | `joining()`                                                                                                                                               |
+| `Collector<CharSequence,?,String>`       | `joining(CharSequence delimiter)`                                                                                                                         |
+| `Collector<CharSequence,?,String>`       | `joining(CharSequence delimiter, CharSequence prefix, CharSequence suffix)`                                                                               |
+| `Collector<T,?,R>`                       | `mapping(Function<? super T,? extends U> mapper, Collector<? super U,A,R> downstream)`                                                                    |
+| `Collector<T,?,Optional<T>>`             | `maxBy(Comparator<? super T> comparator)`                                                                                                                 |
+| `Collector<T,?,Optional<T>>`             | `minBy(Comparator<? super T> comparator)`                                                                                                                 |
+| `Collector<T,?,Map<Boolean,List<T>>>`    | `partitioningBy(Predicate<? super T> predicate)`                                                                                                          |
+| `Collector<T,?,Map<Boolean,D>>`          | `partitioningBy(Predicate<? super T> predicate, Collector<? super T,A,D> downstream)`                                                                     |
+| `Collector<T,?,Optional<T>>`             | `reducing(BinaryOperator<T> op)`                                                                                                                          |
+| `Collector<T,?,T>`                       | `reducing(T identity, BinaryOperator<T> op)`                                                                                                              |
+| `Collector<T,?,U>`                       | `reducing(U identity, Function<? super T,? extends U> mapper, BinaryOperator<U> op)`                                                                      |
+| `Collector<T,?,DoubleSummaryStatistics>` | `summarizingDouble(ToDoubleFunction<? super T> mapper)`                                                                                                   |
+| `Collector<T,?,IntSummaryStatistics>`    | `summarizingInt(ToIntFunction<? super T> mapper)`                                                                                                         |
+| `Collector<T,?,LongSummaryStatistics>`   | `summarizingLong(ToLongFunction<? super T> mapper)`                                                                                                       |
+| `Collector<T,?,Double>`                  | `summingDouble(ToDoubleFunction<? super T> mapper)`                                                                                                       |
+| `Collector<T,?,Integer>`                 | `summingInt(ToIntFunction<? super T> mapper)`                                                                                                             |
+| `Collector<T,?,Long>`                    | `summingLong(ToLongFunction<? super T> mapper)`                                                                                                           |
+| `Collector<T,?,C extends Collection<T>>` | `toCollection(Supplier<C> collectionFactory)`                                                                                                             |
+| `Collector<T,?,List<T>>`                 | `toList()`                                                                                                                                                |
+| `Collector<T,?,Map<K,U>>`                | `toMap(Function<? super T,? extends K> keyMapper, Function<? super T,? extends U> valueMapper)`                                                           |
+| `Collector<T,?,Map<K,U>>`                | `toMap(Function<? super T,? extends K> keyMapper, Function<? super T,? extends U> valueMapper, BinaryOperator<U> mergeFunction)`                          |
+| `Collector<T,?,M extends Map<K,U>>`      | `toMap(Function<? super T,? extends K> keyMapper, Function<? super T,? extends U> valueMapper, BinaryOperator<U> mergeFunction, Supplier<M> mapSupplier)` |
+| `Collector<T,?,Set<T>>`                  | `toSet()`                                                                                                                                                 |
 
 <br>[⬆ back to contents](#Table-of-contents)
 
