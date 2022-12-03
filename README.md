@@ -79,7 +79,7 @@ Java code snippets
 * [`IntStream methods`](#int-stream)
 * [`LongStream methods`](#long-stream)
 * [`DoubleStream methods`](#double-stream)
-* [`Collectors`](#collectors)
+* [`Collectors`](#collectors-methods)
 * [`Check if all elements are equal`](#check-if-all-elements-are-equal)
 * [`Find maximum integer from the stream`](#Find-maximum-integer-from-the-stream)
 * [`Count occurrences of some number in a stream`](#Count-occurrences-of-some-number-in-a-stream)
@@ -590,7 +590,7 @@ Static initialization method:
 <br>[⬆ back to contents](#Table-of-contents)
 
 
-### Collectors
+### Collectors methods
 `Collector<T,A,R>`:
 
 T - the type of input elements to the reduction operation
